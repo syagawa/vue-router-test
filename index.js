@@ -4,8 +4,9 @@ const Foo = { template: '<div>foo</div>' };
 const Bar = { template: '<div>bar</div>' };
 
 const User = {
+  props: ['id'],
   template: `<div class="user">
-              <h2>User {{ $route.params.id }}</h2>
+              <h2>User {{ id }}</h2>
               <router-link to="/user/11/profile">Go to profile</router-link>
               <router-link to="/user/11/posts">Go to posts</router-link>
               <router-view></router-view>
@@ -35,7 +36,11 @@ const UserPostsInfo = {
 };
 
 const Footer = {
-  template: '<div>Footer</div>'
+  template: `<div>
+              <h2>Footer</h2>
+              <div> {{ id }} </div>
+            </div>`,
+  props: ['id']
 };
 
 const routes = [
@@ -53,6 +58,7 @@ const routes = [
     path: '/user/:id',
     name: 'user',
     component: User,
+    props: true,
     children: [
       {
         path: 'profile',
@@ -76,6 +82,17 @@ const routes = [
       footer: Footer
     },
     alias: '/'
+  },
+  {
+    path: '/prop/:id',
+    components: {
+      default: Foo,
+      footer: Footer
+    },
+    props: {
+      default: false,
+      footer: true
+    }
   }
 ];
 

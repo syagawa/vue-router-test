@@ -29,8 +29,18 @@ const UserPosts = {
   template: `<div>User Posts</div>`
 };
 
+const Footer = {
+  template: '<div>Footer</div>'
+};
 
 const routes = [
+  {
+    path: '/',
+    components: {
+      default: Foo,
+      footer: Footer
+    }
+  },
   {path: '/foo', component: Foo },
   {path: '/bar', component: Bar },
   {

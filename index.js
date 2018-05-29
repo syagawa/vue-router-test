@@ -9,6 +9,7 @@ const User = {
               <router-link to="/user/11/profile">Go to profile</router-link>
               <router-link to="/user/11/posts">Go to posts</router-link>
               <router-view></router-view>
+              <router-view name="info"></router-view>
             </div>`,
   // watch: {
   //   '$route' (to, from){
@@ -27,6 +28,10 @@ const UserProfile = {
 
 const UserPosts = {
   template: `<div>User Posts</div>`
+};
+
+const UserPostsInfo = {
+  template: `<div>User Posts Info</div>`
 };
 
 const Footer = {
@@ -54,7 +59,10 @@ const routes = [
       },
       {
         path: 'posts',
-        component: UserPosts
+        components: {
+          default: UserPosts,
+          info: UserPostsInfo
+        }
       }
 
     ]

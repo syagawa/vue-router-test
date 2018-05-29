@@ -68,7 +68,15 @@ const routes = [
 
     ]
   },
-  { path: '/home', redirect: { name: 'root' } }
+  { path: '/home', redirect: { name: 'root' } },
+  {
+    path: '/alias',
+    components: {
+      default: Foo,
+      footer: Footer
+    },
+    alias: '/'
+  }
 ];
 
 const router = new VueRouter({

@@ -14,5 +14,17 @@ const router = new VueRouter({
 
 
 const app = new Vue({
-  router
+  router,
+  computed: {
+    username(){
+      return this.$route.params.username ? this.$route.params.username : this.$route.query.username;
+    }
+  },
+  methods: {
+    goBack(){
+      window.history.length > 1
+        ? this.$router.go(-1)
+        : this.$router.push('');
+    }
+  }
 }).$mount("#app");

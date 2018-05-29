@@ -4,18 +4,25 @@
     <title>
       Vue Router Sample
     </title>
+    <style>
+      [v-cloak] {
+        dispnay: none;
+      }
+    </style>
   </head>
   <body>
+    <script type="text/javascript" src='node_modules/vue/dist/vue.js'></script>
+    <script type="text/javascript" src='node_modules/vue-router/dist/vue-router.js'></script>
     <div id="app">
       <h1>Hello App!</h1>
+      <h2 v-cloak>{{ username }}</h2>
       <p>
         <router-link to="/foo">Go to Foo</router-link>
         <router-link to="/bar">Go to Bar</router-link>
+        <a v-on:click="goBack">back</a>
       </p>
       <router-view></router-view>
     </div>
-    <script type="text/javascript" src='node_modules/vue/dist/vue.js'></script>
-    <script type="text/javascript" src='node_modules/vue-router/dist/vue-router.js'></script>
     <script type="text/javascript" src='index.js'></script>
   </body>
 </html>

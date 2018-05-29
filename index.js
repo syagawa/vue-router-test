@@ -70,3 +70,5 @@ const app = new Vue({
     }
   }
 }).$mount("#app");
+
+router.push({ path: '/user/123'});

@@ -19,7 +19,7 @@
       <p>
         <router-link to="/foo">Go to Foo</router-link>
         <router-link to="/bar">Go to Bar</router-link>
-        <router-link to="/user/11">Go to User</router-link>
+        <router-link v-bind:to="{ name: 'user', params: { id: 11 }}">Go to User</router-link>
 
         <a v-on:click="goBack">back</a>
       </p>

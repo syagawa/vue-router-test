@@ -35,6 +35,7 @@ const routes = [
   {path: '/bar', component: Bar },
   {
     path: '/user/:id',
+    name: 'user',
     component: User,
     children: [
       {

@@ -41,6 +41,7 @@ const Footer = {
 const routes = [
   {
     path: '/',
+    name: 'root',
     components: {
       default: Foo,
       footer: Footer
@@ -66,7 +67,8 @@ const routes = [
       }
 
     ]
-  }
+  },
+  { path: '/home', redirect: { name: 'root' } }
 ];
 
 const router = new VueRouter({
